@@ -13,7 +13,7 @@ before_script:
   - env | sort
   - name="frappe-base"
   - image="monogramm/docker-frappe-base:${VERSION}${VARIANT:+-$VARIANT}"
-  - dir="images/${VARIANT}/${VERSION}"
+  - dir="images/${VERSION}/${VARIANT}"
 
 script:
   - travis_wait docker build -t "$image" "$dir"
@@ -28,8 +28,18 @@ notifications:
   email: false
 
 env: # Environments
-    - VARIANT=alpine VERSION=3.9
-    - VARIANT=debian VERSION=jessie-slim
-    - VARIANT=debian VERSION=jessie
-    - VARIANT=debian VERSION=stretch-slim
-    - VARIANT=debian VERSION=stretch
+    - VERSION=3.6 VARIANT=alpine
+    - VERSION=3.7 VARIANT=alpine
+    - VERSION=3.8 VARIANT=alpine
+    - VERSION=3.6 VARIANT=slim-jessie
+    - VERSION=3.7 VARIANT=slim-jessie
+    - VERSION=3.8 VARIANT=slim-jessie
+    - VERSION=3.6 VARIANT=jessie
+    - VERSION=3.7 VARIANT=jessie
+    - VERSION=3.8 VARIANT=jessie
+    - VERSION=3.6 VARIANT=slim-stretch
+    - VERSION=3.7 VARIANT=slim-stretch
+    - VERSION=3.8 VARIANT=slim-stretch
+    - VERSION=3.6 VARIANT=stretch
+    - VERSION=3.7 VARIANT=stretch
+    - VERSION=3.8 VARIANT=stretch

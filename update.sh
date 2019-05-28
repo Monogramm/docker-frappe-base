@@ -1,19 +1,26 @@
 #!/bin/bash
 set -eo pipefail
 
-declare -A versions=(
-	[debian]='stretch stretch-slim jessie jessie-slim'
-	[alpine]='3.9'
-)
-
 declare -A base=(
-	[debian]='debian'
+	[stretch]='debian'
+	[slim-stretch]='debian'
+	[jessie]='debian'
+	[slim-jessie]='debian'
 	[alpine]='alpine'
 )
 
 variants=(
-	debian
+	stretch
+	slim-stretch
+	jessie
+	slim-jessie
 	alpine
+)
+
+versions=(
+	3.8
+	3.7
+	3.6
 )
 
 
@@ -32,18 +39,17 @@ mkdir -p ./images/
 echo "update docker images"
 travisEnv=
 for variant in "${variants[@]}"; do
-	IFS=', ' read -r -a varVersions <<< "${versions[$variant]}"
 
-	for version in "${varVersions[@]}"; do
+	for version in "${versions[@]}"; do
 		# Create the variant directory with a Dockerfile.
-		dir="images/$variant/$version"
+		dir="images/$version/$variant"
 		if [ -d "$dir" ]; then
 			continue
 		fi
-		echo "generating $variant [$version]"
+		echo "generating $version [$variant]"
 		mkdir -p "$dir"
 
-		shortVersion=${version/-slim/}
+		shortVersion=${version/slim-/}
 
 		template="Dockerfile-${base[$variant]}.template"
 		cp "$template" "$dir/Dockerfile"
@@ -63,7 +69,7 @@ for variant in "${variants[@]}"; do
 
 		cp ".dockerignore" "$dir/.dockerignore"
 
-		travisEnv='\n    - VARIANT='"$variant"' VERSION='"$version$travisEnv"
+		travisEnv='\n    - VERSION='"$version"' VARIANT='"$variant$travisEnv"
 
 		if [[ $1 == 'build' ]]; then
 			tag="$variant-$version"

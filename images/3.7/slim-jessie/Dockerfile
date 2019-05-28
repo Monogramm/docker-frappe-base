@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM python:3.7-slim-jessie
 
 LABEL maintainer="Monogramm Maintainers <opensource at monogramm dot io>"
 
@@ -10,7 +10,7 @@ RUN set -ex; \
 	apt-get update; \
     apt-get install -y software-properties-common gnupg2 curl; \
     apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db; \
-    add-apt-repository "deb http://ams2.mirrors.digitalocean.com/mariadb/repo/10.4/debian stretch main"; \
+    add-apt-repository "deb http://ams2.mirrors.digitalocean.com/mariadb/repo/10.4/debian 3.7 main"; \
     curl -sL https://deb.nodesource.com/setup_8.x | bash -; \
 	curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -; \
     apt-get update; \
@@ -21,8 +21,8 @@ RUN set -ex; \
 		python-mysqldb \
 		git \
 		build-essential \
-		python-setuptools \
-		python-dev \
+		python3-setuptools \
+		python3-dev \
 		libffi-dev \
 		libssl-dev  \
 		ntp \
@@ -33,6 +33,7 @@ RUN set -ex; \
 		libxslt1.1 \
 		libxslt1-dev \
 		libcrypto++-dev \
+        python3-openssl \
 		libtiff5-dev \
 		libjpeg62-turbo-dev \
 		liblcms2-dev \
@@ -42,7 +43,6 @@ RUN set -ex; \
 		python-tk \
 		zlib1g-dev \
 		libfreetype6-dev \
-		python-pip \
 		fontconfig \
 		libxrender1 \
 		libxext6 \

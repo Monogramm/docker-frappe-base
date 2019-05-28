@@ -1,4 +1,4 @@
-FROM python:%%VERSION%%-%%VARIANT%%
+FROM python:3.8-alpine
 
 LABEL maintainer="Monogramm Maintainers <opensource at monogramm dot io>"
 

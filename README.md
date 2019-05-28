@@ -23,6 +23,7 @@ Full-stack web application framework that uses Python and MariaDB on the server 
 
 > [frappe.io](https://frappe.io/)
 > [github frappe](https://github.com/frappe/frappe)
+> [github bench](https://github.com/frappe/bench)
 
 ## Supported tags
 

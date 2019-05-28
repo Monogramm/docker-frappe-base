@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM python:3.7-alpine
 
 LABEL maintainer="Monogramm Maintainers <opensource at monogramm dot io>"
 
@@ -12,8 +12,8 @@ RUN set -ex; \
 		git \
 		alpine-sdk \
 		linux-headers \
-		py-setuptools \
-		python-dev \
+		py3-setuptools \
+		python3-dev \
 		libffi-dev \
 		openntpd \
 		screen \
@@ -24,13 +24,13 @@ RUN set -ex; \
 		postgresql-libs \
 		libxslt \
 		libxslt-dev \
+        py3-openssl \
 		tiff-dev \
 		jpeg-dev \
 		lcms2-dev \
 		libwebp-dev \
 		zlib-dev \
 		freetype-dev \
-		py-pip \
 		xvfb \
 		ttf-freefont \
 		fontconfig \
