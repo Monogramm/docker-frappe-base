@@ -13,7 +13,7 @@
 
 Base Docker image to dockerize Frappe applications.
 
-This image is directly inspired by [BizzoTech/docker-frappe-base](https://github.com/BizzoTech/docker-frappe-base) but derived adds an alpine variation, like provided by [donysukardi/docker-frappe](https://github.com/donysukardi/docker-frappe).
+This image is directly inspired by [BizzoTech/docker-frappe-base](https://github.com/BizzoTech/docker-frappe-base) but adds an alpine variation, like provided by [donysukardi/docker-frappe](https://github.com/donysukardi/docker-frappe).
 
 :construction: **This image is still in development!**
 
