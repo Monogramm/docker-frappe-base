@@ -3,7 +3,7 @@ set -eo pipefail
 
 declare -A versions=(
 	[debian]='stretch stretch-slim jessie jessie-slim'
-	[alpine]='3.8 3.9'
+	[alpine]='3.9'
 )
 
 declare -A base=(

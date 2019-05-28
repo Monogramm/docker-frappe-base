@@ -28,7 +28,6 @@ https://hub.docker.com/r/monogramm/docker-frappe-base/
 
 * alpine
     - `alpine-3.9` `alpine` `latest`
-    - `alpine-3.8`
 * debian
     - `debian-stretch` `debian`
     - `debian-stretch-slim`

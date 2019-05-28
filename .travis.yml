@@ -29,7 +29,6 @@ notifications:
 
 env: # Environments
     - VARIANT=alpine VERSION=3.9
-    - VARIANT=alpine VERSION=3.8
     - VARIANT=debian VERSION=jessie-slim
     - VARIANT=debian VERSION=jessie
     - VARIANT=debian VERSION=stretch-slim
