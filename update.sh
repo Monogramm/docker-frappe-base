@@ -44,7 +44,7 @@ for variant in "${variants[@]}"; do
 		echo "generating $version [$variant]"
 		mkdir -p "$dir"
 
-		shortVersion=${version/slim-/}
+		shortVersion=${variant/slim-/}
 
 		template="Dockerfile-${base[$variant]}.template"
 		cp "$template" "$dir/Dockerfile"
