@@ -8,9 +8,9 @@ ENV DOCKERIZE_VERSION v0.6.1
 
 RUN set -ex; \
 	apt-get update; \
-    apt-get install -y software-properties-common python-software-properties curl; \
+    apt-get install -y software-properties-common curl; \
     apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db; \
-    add-apt-repository "deb http://ams2.mirrors.digitalocean.com/mariadb/repo/10.0/ubuntu jessie main"; \
+    add-apt-repository "deb http://ams2.mirrors.digitalocean.com/mariadb/repo/10.4/debian jessie main"; \
     curl -sL https://deb.nodesource.com/setup_8.x | bash -; \
 	curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -; \
     apt-get update; \
