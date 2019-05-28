@@ -30,12 +30,16 @@ Full-stack web application framework that uses Python and MariaDB on the server 
 https://hub.docker.com/r/monogramm/docker-frappe-base/
 
 * alpine
-    - `alpine-3.9` `alpine` `latest`
+    - `3.8-alpine` `3.8`
+    - `3.7-alpine` `3.7` `alpine` `latest`
+    - `3.6-alpine` `3.6`
 * debian
-    - `debian-stretch` `debian`
-    - `debian-stretch-slim`
-    - `debian-jessie`
-    - `debian-jessie-slim`
+    - `3.8-stretch`
+    - `3.8-stretch-slim`
+    - `3.7-stretch`
+    - `3.7-stretch-slim`
+    - `3.6-stretch`
+    - `3.6-stretch-slim`
 
 # Questions / Issues
 If you got any questions or problems using the image, please visit our [Github Repository](https://github.com/Monogramm/docker-frappe-base) and write an issue.  
