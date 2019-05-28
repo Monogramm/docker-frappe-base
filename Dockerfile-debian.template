@@ -34,7 +34,7 @@ RUN set -ex; \
 		libxslt1-dev \
 		libcrypto++-dev \
 		libtiff5-dev \
-		libjpeg-turbo8 \
+		libjpeg62-turbo-dev \
 		liblcms2-dev \
 		libwebp-dev \
 		tcl8.6-dev \
