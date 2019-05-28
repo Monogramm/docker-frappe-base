@@ -4,21 +4,16 @@ set -eo pipefail
 declare -A base=(
 	[stretch]='debian'
 	[slim-stretch]='debian'
-	[jessie]='debian'
-	[slim-jessie]='debian'
 	[alpine]='alpine'
 )
 
 variants=(
 	stretch
 	slim-stretch
-	jessie
-	slim-jessie
 	alpine
 )
 
 versions=(
-	3.8
 	3.7
 	3.6
 )
