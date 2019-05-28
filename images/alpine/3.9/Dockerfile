@@ -4,18 +4,18 @@ LABEL maintainer="Monogramm Maintainers <opensource at monogramm dot io>"
 
 ENV DOCKERIZE_VERSION v0.6.1
 
-RUN apk add --update \
-		alpine-sdk \
-		linux-headers \
+RUN set -ex; \
+	apk add --update \
 		wget \
 		nodejs \
 		py-mysqldb \
 		git \
-		build-essential \
+		alpine-sdk \
+		linux-headers \
 		py-setuptools \
 		python-dev \
 		libffi-dev \
-		libssl-dev  \
+		openssl-dev \
 		openntpd \
 		screen \
 		mariadb-common \
@@ -25,7 +25,6 @@ RUN apk add --update \
 		postgresql-libs \
 		libxslt \
 		libxslt-dev \
-		openssl-dev \
 		tiff-dev \
 		jpeg-dev \
 		lcms2-dev \
