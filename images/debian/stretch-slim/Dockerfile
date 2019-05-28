@@ -8,7 +8,7 @@ ENV DOCKERIZE_VERSION v0.6.1
 
 RUN set -ex; \
 	apt-get update; \
-    apt-get install -y software-properties-common curl; \
+    apt-get install -y software-properties-common gnupg2 curl; \
     apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db; \
     add-apt-repository "deb http://ams2.mirrors.digitalocean.com/mariadb/repo/10.4/debian stretch main"; \
     curl -sL https://deb.nodesource.com/setup_8.x | bash -; \
@@ -34,7 +34,7 @@ RUN set -ex; \
 		libxslt1-dev \
 		libcrypto++-dev \
 		libtiff5-dev \
-		libjpeg-turbo \
+		libjpeg-turbo8 \
 		liblcms2-dev \
 		libwebp-dev \
 		tcl8.6-dev \

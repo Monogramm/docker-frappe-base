@@ -15,7 +15,6 @@ RUN set -ex; \
 		py-setuptools \
 		python-dev \
 		libffi-dev \
-		openssl-dev \
 		openntpd \
 		screen \
 		mariadb-common \
