@@ -26,8 +26,8 @@ RUN apk add --update \
 		libxslt1-dev \
 		libcrypto++-dev \
 		postfix \
-		libtiff5-dev \
-		libjpeg8-dev \
+		libtiff-dev \
+		libjpeg-dev \
 		liblcms2-dev \
 		libwebp-dev \
 		tcl8.6-dev \

@@ -23,14 +23,12 @@ RUN apt-get update; \
 		mariadb-common \
 		libmariadbclient-dev \
 		mariadb-client \
-		postgresql-dev \
-		postgresql-libs \
 		libxslt1.1 \
 		libxslt1-dev \
 		libcrypto++-dev \
 		postfix \
 		libtiff5-dev \
-		libjpeg8-dev \
+		libjpeg-turbo \
 		liblcms2-dev \
 		libwebp-dev \
 		tcl8.6-dev \
