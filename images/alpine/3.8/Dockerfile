@@ -2,52 +2,56 @@ FROM alpine:3.8
 
 LABEL maintainer="Monogramm Maintainers <opensource at monogramm dot io>"
 
-ENV WKHTMLTOX_VERSION 0.12.4
 ENV DOCKERIZE_VERSION v0.6.1
 
 RUN apk add --update \
+		alpine-sdk \
+		linux-headers \
 		wget \
 		nodejs \
-		python-mysqldb \
+		py-mysqldb \
 		git \
 		build-essential \
-		python-setuptools \
+		py-setuptools \
 		python-dev \
 		libffi-dev \
 		libssl-dev  \
-		ntp \
+		openntpd \
 		screen \
 		mariadb-common \
-		libmariadbclient-dev \
+		mariadb-dev \
 		mariadb-client \
 		postgresql-dev \
 		postgresql-libs \
-		libxslt1.1 \
-		libxslt1-dev \
-		libcrypto++-dev \
-		postfix \
-		libtiff-dev \
-		libjpeg-dev \
-		liblcms2-dev \
+		libxslt \
+		libxslt-dev \
+		openssl-dev \
+		tiff-dev \
+		jpeg-dev \
+		lcms2-dev \
 		libwebp-dev \
-		tcl8.6-dev \
-		tk8.6-dev \
-		python-tk \
-		zlib1g-dev \
-		libfreetype6-dev \
-		python-pip \
+		zlib-dev \
+		freetype-dev \
+		py-pip \
+		xvfb \
+		ttf-freefont \
 		fontconfig \
-		libxrender1 \
-		libxext6 \
-		xfonts-75dpi \
-		xfonts-base \
+		dbus \
+		libxext \
 	; \
-    rm -rf /var/lib/apt/lists/*; \
-    wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/${WKHTMLTOX_VERSION}/wkhtmltox-${WKHTMLTOX_VERSION}_linux-generic-amd64.tar.xz; \
-    tar xf wkhtmltox-${WKHTMLTOX_VERSION}_linux-generic-amd64.tar.xz; \
-    mv wkhtmltox/bin/* /usr/local/bin/; \
-    rm wkhtmltox-${WKHTMLTOX_VERSION}_linux-generic-amd64.tar.xz; \
+    apk add wkhtmltopdf --update-cache \
+        --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ \
+        --allow-untrusted; \
+    mv /usr/bin/wkhtmltopdf /usr/bin/wkhtmltopdf-origin; \
+    echo $'#!/usr/bin/env sh\n\
+          Xvfb :0 -screen 0 1024x768x24 -ac +extension GLX +render -noreset & \n\
+          DISPLAY=:0.0 wkhtmltopdf-origin $@ \n\
+          killall Xvfb\
+          ' > /usr/bin/wkhtmltopdf; \
+    chmod +x /usr/bin/wkhtmltopdf; \
     wget https://github.com/jwilder/dockerize/releases/download/${DOCKERIZE_VERSION}/dockerize-linux-amd64-${DOCKERIZE_VERSION}.tar.gz; \
     tar -C /usr/local/bin -xzvf dockerize-linux-amd64-${DOCKERIZE_VERSION}.tar.gz; \
     rm dockerize-linux-amd64-${DOCKERIZE_VERSION}.tar.gz; \
+    rm -rf /var/lib/apt/lists/*; \
+    rm -rf /var/cache/apk/*; \
     pip install --upgrade setuptools pip
