@@ -36,8 +36,8 @@ https://hub.docker.com/r/monogramm/docker-frappe-base/
 * debian
     - `3.8-stretch`
     - `3.8-stretch-slim`
-    - `3.7-stretch`
-    - `3.7-stretch-slim`
+    - `3.7-stretch` `stretch`
+    - `3.7-stretch-slim` `stretch-slim`
     - `3.6-stretch`
     - `3.6-stretch-slim`
 
