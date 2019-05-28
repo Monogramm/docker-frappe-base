@@ -14,6 +14,7 @@ variants=(
 )
 
 versions=(
+	3.8-rc
 	3.7
 	3.6
 )

@@ -30,7 +30,10 @@ notifications:
 env: # Environments
     - VERSION=3.6 VARIANT=alpine
     - VERSION=3.7 VARIANT=alpine
+    - VERSION=3.8-rc VARIANT=alpine
     - VERSION=3.6 VARIANT=slim-stretch
     - VERSION=3.7 VARIANT=slim-stretch
+    - VERSION=3.8-rc VARIANT=slim-stretch
     - VERSION=3.6 VARIANT=stretch
     - VERSION=3.7 VARIANT=stretch
+    - VERSION=3.8-rc VARIANT=stretch
