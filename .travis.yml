@@ -1,0 +1,36 @@
+dist: trusty
+sudo: required
+
+services: docker
+
+language: bash
+
+branches:
+  only:
+    - master
+
+before_script:
+  - env | sort
+  - name="frappe-base"
+  - image="monogramm/docker-frappe-base:${VERSION}${VARIANT:+-$VARIANT}"
+  - dir="images/${VARIANT}/${VERSION}"
+
+script:
+  - travis_wait docker build -t "$image" "$dir"
+
+after_script:
+  - docker images
+  - docker run --name "$name" -d "$image"
+  - docker ps
+  - docker logs "$name"
+
+notifications:
+  email: false
+
+env: # Environments
+    - VERSION=3.9 VARIANT=alpine
+    - VERSION=3.8 VARIANT=alpine
+    - VERSION=jessie-slim VARIANT=debian
+    - VERSION=jessie VARIANT=debian
+    - VERSION=stretch-slim VARIANT=debian
+    - VERSION=stretch VARIANT=debian
