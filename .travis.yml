@@ -28,9 +28,9 @@ notifications:
   email: false
 
 env: # Environments
-    - VERSION=3.9 VARIANT=alpine
-    - VERSION=3.8 VARIANT=alpine
-    - VERSION=jessie-slim VARIANT=debian
-    - VERSION=jessie VARIANT=debian
-    - VERSION=stretch-slim VARIANT=debian
-    - VERSION=stretch VARIANT=debian
+    - VARIANT=alpine VERSION=3.9
+    - VARIANT=alpine VERSION=3.8
+    - VARIANT=debian VERSION=jessie-slim
+    - VARIANT=debian VERSION=jessie
+    - VARIANT=debian VERSION=stretch-slim
+    - VARIANT=debian VERSION=stretch

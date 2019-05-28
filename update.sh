@@ -60,7 +60,7 @@ for variant in "${variants[@]}"; do
 
 		cp ".dockerignore" "$dir/.dockerignore"
 
-		travisEnv='\n    - VERSION='"$version"' VARIANT='"$variant$travisEnv"
+		travisEnv='\n    - VARIANT='"$variant"' VERSION='"$version$travisEnv"
 
 		if [[ $1 == 'build' ]]; then
 			tag="$variant-$version"

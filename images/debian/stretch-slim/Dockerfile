@@ -3,7 +3,7 @@ FROM debian:stretch-slim
 LABEL maintainer="Monogramm Maintainers <opensource at monogramm dot io>"
 
 ENV DEBIAN_FRONTEND="noninteractive"
-ENV WKHTMLTOX_VERSION 0.12.5
+ENV WKHTMLTOX_VERSION 0.12.4
 ENV DOCKERIZE_VERSION v0.6.1
 
 RUN apt-get update; \
