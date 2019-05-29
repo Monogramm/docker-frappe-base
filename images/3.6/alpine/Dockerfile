@@ -51,4 +51,5 @@ RUN set -ex; \
     rm dockerize-linux-amd64-${DOCKERIZE_VERSION}.tar.gz; \
     rm -rf /var/lib/apt/lists/*; \
     rm -rf /var/cache/apk/*; \
-    pip install --upgrade setuptools pip
+    pip install --upgrade setuptools pip; \
+	pip --version
