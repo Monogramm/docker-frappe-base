@@ -4,7 +4,7 @@
 
 [![License: AGPL v3][uri_license_image]][uri_license]
 [![Build Status](https://travis-ci.org/Monogramm/docker-frappe-base.svg)](https://travis-ci.org/Monogramm/docker-frappe-base)
-[![Docker Automated buid](https://img.shields.io/docker/cloud/monogramm/docker-frappe-base.svg)](https://hub.docker.com/r/monogramm/docker-frappe-base/)
+[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/monogramm/docker-frappe-base.svg)](https://hub.docker.com/r/monogramm/docker-frappe-base/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/monogramm/docker-frappe-base.svg)](https://hub.docker.com/r/monogramm/docker-frappe-base/)
 [![](https://images.microbadger.com/badges/version/monogramm/docker-frappe-base.svg)](https://microbadger.com/images/monogramm/docker-frappe-base)
 [![](https://images.microbadger.com/badges/image/monogramm/docker-frappe-base.svg)](https://microbadger.com/images/monogramm/docker-frappe-base)
