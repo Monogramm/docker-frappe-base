@@ -8,6 +8,7 @@ RUN set -ex; \
 	apk add --update \
 		wget \
 		nodejs \
+		nodejs-npm \
 		py-mysqldb \
 		git \
 		alpine-sdk \
