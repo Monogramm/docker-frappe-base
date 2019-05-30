@@ -17,6 +17,7 @@ versions=(
 	3.8-rc
 	3.7
 	3.6
+	2.7
 )
 
 
@@ -45,7 +46,8 @@ for variant in "${variants[@]}"; do
 		echo "generating $version [$variant]"
 		mkdir -p "$dir"
 
-		shortVersion=${variant/slim-/}
+		shortVariant=${variant/slim-/}
+		majorVersion=${version:0:1}
 
 		template="Dockerfile-${base[$variant]}.template"
 		cp "$template" "$dir/Dockerfile"
@@ -54,7 +56,8 @@ for variant in "${variants[@]}"; do
 		sed -ri -e '
 			s/%%VARIANT%%/'"$variant"'/g;
 			s/%%VERSION%%/'"$version"'/g;
-			s/%%SHORT_VERSION%%/'"$shortVersion"'/g;
+			s/%%MAJOR_VERSION%%/'"$majorVersion"'/g;
+			s/%%SHORT_VARIANT%%/'"$shortVariant"'/g;
 		' "$dir/Dockerfile"
 
 		# Copy the shell scripts

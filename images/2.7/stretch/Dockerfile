@@ -1,4 +1,4 @@
-FROM python:%%VERSION%%-%%VARIANT%%
+FROM python:2.7-stretch
 
 LABEL maintainer="Monogramm Maintainers <opensource at monogramm dot io>"
 
@@ -10,7 +10,7 @@ RUN set -ex; \
 	apt-get update; \
     apt-get install -y software-properties-common gnupg2 curl; \
     apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db; \
-    add-apt-repository "deb http://ams2.mirrors.digitalocean.com/mariadb/repo/10.4/debian %%SHORT_VARIANT%% main"; \
+    add-apt-repository "deb http://ams2.mirrors.digitalocean.com/mariadb/repo/10.4/debian stretch main"; \
     curl -sL https://deb.nodesource.com/setup_8.x | bash -; \
 	curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -; \
     apt-get update; \
@@ -21,8 +21,8 @@ RUN set -ex; \
 		python-mysqldb \
 		git \
 		build-essential \
-		python%%MAJOR_VERSION%%-setuptools \
-		python%%MAJOR_VERSION%%-dev \
+		python2-setuptools \
+		python2-dev \
 		libffi-dev \
 		libssl-dev  \
 		ntp \
@@ -33,7 +33,7 @@ RUN set -ex; \
 		libxslt1.1 \
 		libxslt1-dev \
 		libcrypto++-dev \
-        python%%MAJOR_VERSION%%-openssl \
+        python2-openssl \
 		libtiff5-dev \
 		libjpeg62-turbo-dev \
 		liblcms2-dev \

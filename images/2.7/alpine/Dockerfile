@@ -1,4 +1,4 @@
-FROM python:%%VERSION%%-%%VARIANT%%
+FROM python:2.7-alpine
 
 LABEL maintainer="Monogramm Maintainers <opensource at monogramm dot io>"
 
@@ -13,8 +13,8 @@ RUN set -ex; \
 		git \
 		alpine-sdk \
 		linux-headers \
-		py%%MAJOR_VERSION%%-setuptools \
-		python%%MAJOR_VERSION%%-dev \
+		py2-setuptools \
+		python2-dev \
 		libffi-dev \
 		openntpd \
 		screen \
@@ -25,7 +25,7 @@ RUN set -ex; \
 		postgresql-libs \
 		libxslt \
 		libxslt-dev \
-        py%%MAJOR_VERSION%%-openssl \
+        py2-openssl \
 		tiff-dev \
 		jpeg-dev \
 		lcms2-dev \
