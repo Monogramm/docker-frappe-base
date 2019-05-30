@@ -48,6 +48,9 @@ for variant in "${variants[@]}"; do
 
 		shortVariant=${variant/slim-/}
 		majorVersion=${version:0:1}
+		if [[ "$majorVersion" = "2" && "${base[$variant]}" = "debian" ]]; then
+			majorVersion=
+		fi
 
 		template="Dockerfile-${base[$variant]}.template"
 		cp "$template" "$dir/Dockerfile"

@@ -21,8 +21,8 @@ RUN set -ex; \
 		python-mysqldb \
 		git \
 		build-essential \
-		python2-setuptools \
-		python2-dev \
+		python-setuptools \
+		python-dev \
 		libffi-dev \
 		libssl-dev  \
 		ntp \
@@ -33,7 +33,7 @@ RUN set -ex; \
 		libxslt1.1 \
 		libxslt1-dev \
 		libcrypto++-dev \
-        python2-openssl \
+        python-openssl \
 		libtiff5-dev \
 		libjpeg62-turbo-dev \
 		liblcms2-dev \
