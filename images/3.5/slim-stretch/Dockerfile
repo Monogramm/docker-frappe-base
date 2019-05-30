@@ -1,4 +1,4 @@
-FROM python:3.6-stretch
+FROM python:3.5-slim-stretch
 
 LABEL maintainer="Monogramm Maintainers <opensource at monogramm dot io>"
 

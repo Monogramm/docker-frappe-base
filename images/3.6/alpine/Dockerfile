@@ -39,6 +39,7 @@ RUN set -ex; \
 		libxext \
 		wkhtmltopdf \
 	; \
+	npm install -g yarn; \
     mv /usr/bin/wkhtmltopdf /usr/bin/wkhtmltopdf-origin; \
     echo $'#!/usr/bin/env sh\n\
           Xvfb :0 -screen 0 1024x768x24 -ac +extension GLX +render -noreset & \n\

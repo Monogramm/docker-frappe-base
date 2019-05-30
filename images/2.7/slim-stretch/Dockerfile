@@ -49,6 +49,7 @@ RUN set -ex; \
 		xfonts-75dpi \
 		xfonts-base \
 	; \
+	npm install -g yarn; \
     rm -rf /var/lib/apt/lists/*; \
     wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/${WKHTMLTOX_VERSION}/wkhtmltox-${WKHTMLTOX_VERSION}_linux-generic-amd64.tar.xz; \
     tar xf wkhtmltox-${WKHTMLTOX_VERSION}_linux-generic-amd64.tar.xz; \
