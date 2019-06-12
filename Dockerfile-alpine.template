@@ -26,6 +26,7 @@ RUN set -ex; \
 		libxslt \
 		libxslt-dev \
         py%%MAJOR_VERSION%%-openssl \
+		py%%MAJOR_VERSION%%-ldap3 \
 		tiff-dev \
 		jpeg-dev \
 		lcms2-dev \
