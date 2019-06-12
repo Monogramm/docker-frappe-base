@@ -34,6 +34,7 @@ RUN set -ex; \
 		libxslt1-dev \
 		libcrypto++-dev \
         python3-openssl \
+        python3-ldap3 \
 		libtiff5-dev \
 		libjpeg62-turbo-dev \
 		liblcms2-dev \
