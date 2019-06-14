@@ -21,6 +21,7 @@ RUN set -ex; \
 		mariadb-common \
 		mariadb-dev \
 		mariadb-client \
+		postgresql-client \
 		postgresql-dev \
 		postgresql-libs \
 		libxslt \

@@ -30,6 +30,7 @@ RUN set -ex; \
 		mariadb-common \
 		libmariadbclient-dev \
 		mariadb-client \
+		postgresql-client-common \
 		libxslt1.1 \
 		libxslt1-dev \
 		libcrypto++-dev \
