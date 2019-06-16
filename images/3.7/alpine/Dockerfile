@@ -13,6 +13,7 @@ RUN set -ex; \
 		git \
 		alpine-sdk \
 		linux-headers \
+		busybox-suid \
 		py3-setuptools \
 		python3-dev \
 		libffi-dev \
