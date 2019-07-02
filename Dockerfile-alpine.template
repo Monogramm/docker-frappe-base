@@ -5,44 +5,44 @@ LABEL maintainer="Monogramm Maintainers <opensource at monogramm dot io>"
 ENV DOCKERIZE_VERSION v0.6.1
 
 RUN set -ex; \
-	apk add --update \
-		wget \
-		nodejs \
-		nodejs-npm \
-		py-mysqldb \
-		git \
-		alpine-sdk \
-		linux-headers \
-		busybox-suid \
-		py%%MAJOR_VERSION%%-setuptools \
-		python%%MAJOR_VERSION%%-dev \
-		libffi-dev \
-		openntpd \
-		screen \
-		mariadb-common \
-		mariadb-dev \
-		mariadb-client \
-		postgresql-client \
-		postgresql-dev \
-		postgresql-libs \
-		libxslt \
-		libxslt-dev \
+    apk add --update \
+        wget \
+        nodejs \
+        nodejs-npm \
+        py-mysqldb \
+        git \
+        alpine-sdk \
+        linux-headers \
+        busybox-suid \
+        py%%MAJOR_VERSION%%-setuptools \
+        python%%MAJOR_VERSION%%-dev \
+        libffi-dev \
+        openntpd \
+        screen \
+        mariadb-common \
+        mariadb-dev \
+        mariadb-client \
+        postgresql-client \
+        postgresql-dev \
+        postgresql-libs \
+        libxslt \
+        libxslt-dev \
         py%%MAJOR_VERSION%%-openssl \
-		py%%MAJOR_VERSION%%-ldap3 \
-		tiff-dev \
-		jpeg-dev \
-		lcms2-dev \
-		libwebp-dev \
-		zlib-dev \
-		freetype-dev \
-		xvfb \
-		ttf-freefont \
-		fontconfig \
-		dbus \
-		libxext \
-		wkhtmltopdf \
-	; \
-	npm install -g yarn; \
+        py%%MAJOR_VERSION%%-ldap3 \
+        tiff-dev \
+        jpeg-dev \
+        lcms2-dev \
+        libwebp-dev \
+        zlib-dev \
+        freetype-dev \
+        xvfb \
+        ttf-freefont \
+        fontconfig \
+        dbus \
+        libxext \
+        wkhtmltopdf \
+    ; \
+    npm install -g yarn; \
     mv /usr/bin/wkhtmltopdf /usr/bin/wkhtmltopdf-origin; \
     echo $'#!/usr/bin/env sh\n\
           Xvfb :0 -screen 0 1024x768x24 -ac +extension GLX +render -noreset & \n\
@@ -56,4 +56,4 @@ RUN set -ex; \
     rm -rf /var/lib/apt/lists/*; \
     rm -rf /var/cache/apk/*; \
     pip install --upgrade setuptools pip pip-tools; \
-	pip --version
+    pip --version
