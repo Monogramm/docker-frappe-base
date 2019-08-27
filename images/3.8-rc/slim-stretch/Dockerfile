@@ -29,7 +29,7 @@ RUN set -ex; \
         screen \
         mariadb-common \
         libmariadbclient-dev \
-        mariadb-client \
+        default-mysql-client \
         postgresql-client-common \
         libxslt1.1 \
         libxslt1-dev \
