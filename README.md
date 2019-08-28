@@ -15,8 +15,6 @@ Base Docker image to dockerize Frappe applications.
 
 This image is directly inspired by [BizzoTech/docker-frappe-base](https://github.com/BizzoTech/docker-frappe-base) but adds an alpine variation, like provided by [donysukardi/docker-frappe](https://github.com/donysukardi/docker-frappe).
 
-:construction: **This image is still in development!**
-
 ## What is Frappe ?
 
 Full-stack web application framework that uses Python and MariaDB on the server side and a tightly integrated client side library. Built for [ERPNext](https://erpnext.com/).
