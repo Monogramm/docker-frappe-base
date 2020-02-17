@@ -1,5 +1,5 @@
-
 [uri_license]: http://www.gnu.org/licenses/agpl.html
+
 [uri_license_image]: https://img.shields.io/badge/License-AGPL%20v3-blue.svg
 
 [![License: AGPL v3][uri_license_image]][uri_license]
@@ -20,24 +20,27 @@ This image is directly inspired by [BizzoTech/docker-frappe-base](https://github
 Full-stack web application framework that uses Python and MariaDB on the server side and a tightly integrated client side library. Built for [ERPNext](https://erpnext.com/).
 
 > [frappe.io](https://frappe.io/)
+
 > [github frappe](https://github.com/frappe/frappe)
+
 > [github bench](https://github.com/frappe/bench)
 
 ## Supported tags
 
-https://hub.docker.com/r/monogramm/docker-frappe-base/
+[Dockerhub monogramm/docker-frappe-base](https://hub.docker.com/r/monogramm/docker-frappe-base/)
 
-* alpine
-    - `3.8-alpine` `3.8`
-    - `3.7-alpine` `3.7` `alpine` `latest`
-    - `3.6-alpine` `3.6`
-* debian
-    - `3.8-stretch`
-    - `3.8-stretch-slim`
-    - `3.7-stretch` `stretch`
-    - `3.7-stretch-slim` `stretch-slim`
-    - `3.6-stretch`
-    - `3.6-stretch-slim`
+-   alpine
+    -   `3.8-alpine` `3.8`
+    -   `3.7-alpine` `3.7` `alpine` `latest`
+    -   `3.6-alpine` `3.6`
+-   debian
+    -   `3.8-debian`
+    -   `3.8-debian-slim`
+    -   `3.7-debian` `debian`
+    -   `3.7-debian-slim` `debian-slim`
+    -   `3.6-debian`
+    -   `3.6-debian-slim`
 
 # Questions / Issues
+
 If you got any questions or problems using the image, please visit our [Github Repository](https://github.com/Monogramm/docker-frappe-base) and write an issue.  
