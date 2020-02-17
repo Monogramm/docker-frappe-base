@@ -1,9 +1,9 @@
+os: linux
 dist: trusty
-sudo: required
 
 services: docker
 
-language: bash
+language: shell
 
 branches:
   only:
@@ -16,10 +16,13 @@ before_script:
   - dir="images/${VERSION}/${VARIANT}"
 
 script:
+  # Test container build
   - travis_wait docker build -t "$image" "$dir"
+  - docker images
+  - docker images | grep "monogramm/docker-frappe-base"
 
 after_script:
-  - docker images
+  # Test container run
   - docker run --name "$name" -d "$image"
   - docker ps
   - docker logs "$name"
@@ -27,19 +30,25 @@ after_script:
 notifications:
   email: false
 
+matrix:
+  allow_failures:
+    - env: VERSION=2.7 VARIANT=alpine
+    - env: VERSION=2.7 VARIANT=slim-buster
+    - env: VERSION=2.7 VARIANT=buster
+
 env: # Environments
     - VERSION=2.7 VARIANT=alpine
     - VERSION=3.5 VARIANT=alpine
     - VERSION=3.6 VARIANT=alpine
     - VERSION=3.7 VARIANT=alpine
-    - VERSION=3.8-rc VARIANT=alpine
-    - VERSION=2.7 VARIANT=slim-stretch
-    - VERSION=3.5 VARIANT=slim-stretch
-    - VERSION=3.6 VARIANT=slim-stretch
-    - VERSION=3.7 VARIANT=slim-stretch
-    - VERSION=3.8-rc VARIANT=slim-stretch
-    - VERSION=2.7 VARIANT=stretch
-    - VERSION=3.5 VARIANT=stretch
-    - VERSION=3.6 VARIANT=stretch
-    - VERSION=3.7 VARIANT=stretch
-    - VERSION=3.8-rc VARIANT=stretch
+    - VERSION=3.8 VARIANT=alpine
+    - VERSION=2.7 VARIANT=slim-buster
+    - VERSION=3.5 VARIANT=slim-buster
+    - VERSION=3.6 VARIANT=slim-buster
+    - VERSION=3.7 VARIANT=slim-buster
+    - VERSION=3.8 VARIANT=slim-buster
+    - VERSION=2.7 VARIANT=buster
+    - VERSION=3.5 VARIANT=buster
+    - VERSION=3.6 VARIANT=buster
+    - VERSION=3.7 VARIANT=buster
+    - VERSION=3.8 VARIANT=buster

@@ -9,7 +9,6 @@ RUN set -ex; \
         wget \
         nodejs \
         nodejs-npm \
-        py-mysqldb \
         git \
         alpine-sdk \
         linux-headers \
@@ -42,14 +41,18 @@ RUN set -ex; \
         libxext \
         wkhtmltopdf \
     ; \
+    mkdir /tmp/.X11-unix; \
+    chmod 777 /tmp/.X11-unix; \
+    chown root:root /tmp/.X11-unix; \
     npm install -g yarn; \
     mv /usr/bin/wkhtmltopdf /usr/bin/wkhtmltopdf-origin; \
     echo $'#!/usr/bin/env sh\n\
-          Xvfb :0 -screen 0 1024x768x24 -ac +extension GLX +render -noreset & \n\
+          Xvfb :0 -screen 0 1920x1080x24 -ac +extension GLX +render -noreset & \n\
           DISPLAY=:0.0 wkhtmltopdf-origin $@ \n\
           killall Xvfb\
           ' > /usr/bin/wkhtmltopdf; \
     chmod +x /usr/bin/wkhtmltopdf; \
+    wkhtmltopdf --version; \
     wget https://github.com/jwilder/dockerize/releases/download/${DOCKERIZE_VERSION}/dockerize-linux-amd64-${DOCKERIZE_VERSION}.tar.gz; \
     tar -C /usr/local/bin -xzvf dockerize-linux-amd64-${DOCKERIZE_VERSION}.tar.gz; \
     rm dockerize-linux-amd64-${DOCKERIZE_VERSION}.tar.gz; \
