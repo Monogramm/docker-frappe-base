@@ -2,7 +2,7 @@ FROM python:3.7-alpine
 
 LABEL maintainer="Monogramm Maintainers <opensource at monogramm dot io>"
 
-ARG DOCKERIZE_VERSION v0.6.1
+ARG DOCKERIZE_VERSION=v0.6.1
 
 RUN set -ex; \
     apk add --update \

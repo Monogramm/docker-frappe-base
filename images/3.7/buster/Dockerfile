@@ -3,9 +3,10 @@ FROM python:3.7-buster
 LABEL maintainer="Monogramm Maintainers <opensource at monogramm dot io>"
 
 ARG NODE_VERSION=12
-ARG DEBIAN_FRONTEND="noninteractive"
-ARG WKHTMLTOX_VERSION 0.12.4
-ARG DOCKERIZE_VERSION v0.6.1
+
+ENV DEBIAN_FRONTEND="noninteractive"
+ARG WKHTMLTOX_VERSION=0.12.4
+ARG DOCKERIZE_VERSION=v0.6.1
 
 RUN set -ex; \
     apt-get update; \
